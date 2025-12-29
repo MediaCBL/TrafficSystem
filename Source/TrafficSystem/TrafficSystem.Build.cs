@@ -38,6 +38,8 @@ public class TrafficSystem : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				"AIModule",
+				"GameplayTasks"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
