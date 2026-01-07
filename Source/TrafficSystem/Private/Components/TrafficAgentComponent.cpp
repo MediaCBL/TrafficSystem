@@ -30,17 +30,19 @@ ETrafficRightOfWay UTrafficAgentComponent::EvaluateRightOfWay() const
 	// Basic default policy:
 	// - Vehicles: Green => Go, Yellow => Yield, Red => Stop
 	// - Pedestrians: Walk => Go, Don'tWalk/Red => Stop, others => Yield
-	if (bIsPedestrian)
+	switch (State)
 	{
-		if (State == ETrafficSignalState::Walk) return ETrafficRightOfWay::Go;
-		if (State == ETrafficSignalState::DontWalk || State == ETrafficSignalState::Red) return ETrafficRightOfWay::Stop;
-		return ETrafficRightOfWay::Yield;
-	}
-	else
-	{
-		if (State == ETrafficSignalState::Green) return ETrafficRightOfWay::Go;
-		if (State == ETrafficSignalState::Yellow) return ETrafficRightOfWay::Yield;
-		return ETrafficRightOfWay::Stop;
+		case ETrafficSignalState::Green:
+		case ETrafficSignalState::Walk:
+			return ETrafficRightOfWay::Go;
+		
+		case ETrafficSignalState::Red:
+		case ETrafficSignalState::DontWalk:
+			return ETrafficRightOfWay::Stop;
+		
+		case ETrafficSignalState::Yellow:
+		default:
+			return ETrafficRightOfWay::Yield;
 	}
 }
 

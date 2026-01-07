@@ -14,10 +14,7 @@ void ATrafficSignalActor::BeginPlay()
 
 void ATrafficSignalActor::SetSignalState(ETrafficSignalState NewState)
 {
-	if (SignalState == NewState)
-	{
-		return;
-	}
+	if (SignalState == NewState) return;
 
 	SignalState = NewState;
 	OnSignalChanged.Broadcast(this, SignalState);

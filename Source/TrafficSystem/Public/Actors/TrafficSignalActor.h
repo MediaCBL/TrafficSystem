@@ -18,7 +18,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Traffic")
 	ETrafficSignalState SignalState = ETrafficSignalState::Red;
 	
-
 	UFUNCTION(BlueprintCallable, Category="Traffic")
 	void SetSignalState(ETrafficSignalState NewState);
 
