@@ -63,4 +63,3 @@ These demo assets demonstrate:
 ## License
 
 Internal / Project-specific usage.  
-(Adjust this section if the plugin is shared publicly.)
