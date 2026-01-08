@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "TrafficTypes.generated.h"
 
+class UBoxComponent;
+
 UENUM(BlueprintType)
 enum class ETrafficRightOfWay : uint8
 {
@@ -25,6 +27,14 @@ enum class ETrafficSignalState : uint8
 	DontWalk   UMETA(DisplayName="Don't Walk")
 };
 
+UENUM(BlueprintType)
+enum class ETrafficLightState : uint8
+{
+	Red,
+	Yellow,
+	Green
+};
+
 USTRUCT(BlueprintType)
 struct FTrafficMoveRequest
 {
@@ -38,4 +48,22 @@ struct FTrafficMoveRequest
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Traffic")
 	bool bStopAtDestination = true;
+};
+
+USTRUCT(BlueprintType)
+struct FTrafficLane
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UBoxComponent* StopVolume = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UStaticMeshComponent* LightMesh = nullptr;
+
+	UPROPERTY(BlueprintReadOnly)
+	UMaterialInstanceDynamic* DynamicMaterial = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	ETrafficLightState CurrentState = ETrafficLightState::Red;
 };
