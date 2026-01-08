@@ -35,6 +35,15 @@ enum class ETrafficLightState : uint8
 	Green
 };
 
+UENUM(BlueprintType)
+enum class ETrafficLaneOrientation : uint8
+{
+	North UMETA(DisplayName="North"),
+	South UMETA(DisplayName="South"),
+	East UMETA(DisplayName="East"),
+	West UMETA(DisplayName="West")
+};
+
 USTRUCT(BlueprintType)
 struct FTrafficMoveRequest
 {
