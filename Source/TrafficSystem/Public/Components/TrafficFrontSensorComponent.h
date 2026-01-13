@@ -6,9 +6,10 @@
 #include "Components/BoxComponent.h"
 #include "TrafficFrontSensorComponent.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(
 	FOnTrafficBlockStateChanged,
-	bool, bIsBlocked
+	bool, bIsBlocked,
+	AActor*, TrafficBlocker
 );
 
 UCLASS(ClassGroup=(Traffic), meta=(BlueprintSpawnableComponent))
@@ -29,7 +30,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY()
-	TSet<TWeakObjectPtr<AActor>> BlockingActors;
+	TArray<TObjectPtr<AActor>> BlockingActors;
 
 	UFUNCTION()
 	void HandleBeginOverlap(

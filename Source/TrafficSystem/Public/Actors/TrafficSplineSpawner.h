@@ -39,6 +39,9 @@ public:
 	/** Initial speed for spline follower */
 	UPROPERTY(EditAnywhere, Category="Traffic|Spawner")
 	float InitialSpeed = 300.f;
+	
+	UPROPERTY(EditAnywhere, Category="Traffic|Spawner")
+	int32 SpawnPriority = 1;
 
 	/** Spawn agents */
 	UFUNCTION(BlueprintCallable, Category="Traffic|Spawner")

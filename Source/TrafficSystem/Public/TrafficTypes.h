@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "TrafficTypes.generated.h"
 
+class USplineComponent;
 class UBoxComponent;
 
 UENUM(BlueprintType)
@@ -75,4 +76,28 @@ struct FTrafficLane
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	ETrafficLightState CurrentState = ETrafficLightState::Red;
+};
+
+USTRUCT(BlueprintType)
+struct FTrafficFollowerInfo
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	USplineComponent* Spline = nullptr;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float Speed = 300.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float DistanceAlongSpline = 0.f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float DistanceOnSpline = 0.f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	int32 Priority = 0;            // Optional (main road > side road)
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	int32 UniqueID = 0;            // Stable tie breaker
 };

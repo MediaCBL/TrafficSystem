@@ -72,5 +72,8 @@ void UTrafficFrontSensorComponent::HandleEndOverlap(
 void UTrafficFrontSensorComponent::UpdateBlockedState() const
 {
 	const bool bBlocked = IsBlocked();
-	OnBlockStateChanged.Broadcast(bBlocked);
+	for (TObjectPtr<AActor> Actor : BlockingActors)
+	{
+		OnBlockStateChanged.Broadcast(bBlocked, Actor);
+	}	
 }

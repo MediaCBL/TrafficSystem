@@ -1,7 +1,7 @@
 ﻿// © Felix Courteau-Boutin All Right Reserved
 
 #include "Actors/TrafficSplineSpawner.h"
-
+#include "TrafficTypes.h"
 #include "Components/SplineComponent.h"
 #include "Components/TrafficSplineFollowerComponent.h"
 #include "Engine/World.h"
@@ -75,8 +75,13 @@ void ATrafficSplineSpawner::SpawnAgents()
 			continue;
 		}
 
-		SplineFollower->SetSpline(Spline);
-		SplineFollower->SetSpeed(InitialSpeed);
-		SplineFollower->StartFollowing();
+		FTrafficFollowerInfo SpawnedTrafficInfo;
+		SpawnedTrafficInfo.UniqueID = i;
+		SpawnedTrafficInfo.Priority = SpawnPriority;
+		SpawnedTrafficInfo.Spline = Spline;
+		SpawnedTrafficInfo.Speed = InitialSpeed;
+		SpawnedTrafficInfo.DistanceAlongSpline = Distance;
+
+		SplineFollower->StartFollowing(SpawnedTrafficInfo);
 	}
 }

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "TrafficTypes.h"
 #include "Components/ActorComponent.h"
 #include "TrafficSplineFollowerComponent.generated.h"
 
@@ -31,7 +32,11 @@ public:
 	void SetSpeed(float UnitsPerSecond);
 
 	UFUNCTION(BlueprintCallable, Category="Traffic|Spline")
-	void StartFollowing();
+	void SetForcedMove(bool ForceMove);
+
+	UFUNCTION(BlueprintCallable, Category="Traffic|Spline")
+	void StartFollowing(FTrafficFollowerInfo Info);
+	void InitializeSplineFollowerComponent();
 
 	UFUNCTION(BlueprintCallable, Category="Traffic|Spline")
 	void StopFollowing();
@@ -39,9 +44,18 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Traffic|Spline")
 	float GetDistanceAlongSpline() const;
 
+	UFUNCTION(BlueprintCallable, Category="Traffic|Spline")
+	void SetDistanceAlongSpline(float Distance);
+
 	/** Fired when passing a spline point (for intersections, signals, etc.) */
 	UPROPERTY(BlueprintAssignable, Category="Traffic|Spline")
 	FOnSplinePointReached OnSplinePointReached;
+
+	UFUNCTION(BlueprintCallable, Category="Traffic|Spline")
+	FTrafficFollowerInfo GetTrafficFollowerInfo() const;
+
+	UFUNCTION()
+	bool ShouldYieldTo(const AActor* Other) const;
 
 protected:
 	virtual void BeginPlay() override;
@@ -54,12 +68,14 @@ protected:
 	void Advance(float DeltaTime);
 	bool IsBlocked() const;
 
-protected:
 	UPROPERTY(EditAnywhere, Category="Traffic|Spline")
 	bool bUseSplineRotation = true;
 
 	UPROPERTY(EditAnywhere, Category="Traffic|Spline")
 	bool bLoop = false;
+	
+	UPROPERTY(EditAnywhere, Category="Traffic|Spline")
+	FTrafficFollowerInfo TrafficFollowerInfo;
 
 private:
 	UPROPERTY()
@@ -68,5 +84,6 @@ private:
 	float Speed = 0.f;
 	float DistanceAlongSpline = 0.f;
 	int32 LastSplinePointIndex = INDEX_NONE;
+	bool bForcedMove = false;
 };
 

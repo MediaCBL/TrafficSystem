@@ -17,13 +17,33 @@ class TRAFFICSYSTEM_API ITrafficVehicleInterface
 
 public:
 	/** Return true if this actor should block vehicles behind it */
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="Traffic")
+	UFUNCTION(BlueprintNativeEvent, Category="Traffic")
 	bool GetCanBlockTraffic() const;
 
-	/** Return true if this actor is blocked */
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="Traffic")
+	UFUNCTION(BlueprintNativeEvent)
+	bool GetIsBlockedByTraffic() const;
+
+	UFUNCTION(BlueprintNativeEvent)
+	bool GetIsBlockedByLane() const;
+
+	UFUNCTION(BlueprintNativeEvent)
 	bool GetIsBlocked() const;
 
-	UFUNCTION(BlueprintImplementableEvent, Category="Traffic")
-	void SetIsBlocked(bool bIsBlocked);
+	UFUNCTION(BlueprintNativeEvent, Category="Traffic")
+	void SetIsBlockedByTraffic(bool bIsBlocked);
+	
+	UFUNCTION(BlueprintNativeEvent, Category="Traffic")
+	void SetIsBlockedByLane(bool bIsBlocked);
+		
+	UFUNCTION(BlueprintNativeEvent)
+	void SetForcedMove(bool bAllowMove);
+	
+	UFUNCTION(BlueprintNativeEvent)
+	float GetDistanceOnSpline() const;
+
+	UFUNCTION(BlueprintNativeEvent)
+	int32 GetTrafficPriority() const;
+
+	UFUNCTION(BlueprintNativeEvent)
+	int32 GetTrafficUniqueID() const;
 };
