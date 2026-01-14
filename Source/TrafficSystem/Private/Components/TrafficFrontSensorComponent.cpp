@@ -63,10 +63,8 @@ void UTrafficFrontSensorComponent::HandleEndOverlap(
 		return;
 	}
 
-	if (BlockingActors.Remove(OtherActor) > 0)
-	{
-		UpdateBlockedState();
-	}
+	BlockingActors.Remove(OtherActor);
+	BlockingActors.Num() > 0 ? UpdateBlockedState() : OnBlockStateChanged.Broadcast(false, nullptr);
 }
 
 void UTrafficFrontSensorComponent::UpdateBlockedState() const

@@ -11,19 +11,6 @@ UTrafficSplineFollowerComponent::UTrafficSplineFollowerComponent()
 	PrimaryComponentTick.bStartWithTickEnabled = false;
 }
 
-void UTrafficSplineFollowerComponent::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
-void UTrafficSplineFollowerComponent::SetSpline(USplineComponent* InSpline)
-{
-	Spline = InSpline;
-	bLoop = Spline->IsClosedLoop();
-	DistanceAlongSpline = 0.f;
-	LastSplinePointIndex = INDEX_NONE;
-}
-
 void UTrafficSplineFollowerComponent::SetSpeed(float UnitsPerSecond)
 {
 	Speed = FMath::Max(UnitsPerSecond, 0.f);
@@ -50,6 +37,8 @@ void UTrafficSplineFollowerComponent::StartFollowing(const FTrafficFollowerInfo 
 void UTrafficSplineFollowerComponent::InitializeSplineFollowerComponent()
 {
 	Spline = TrafficFollowerInfo.Spline;
+	bLoop = Spline->IsClosedLoop();
+	LastSplinePointIndex = INDEX_NONE;
 	Speed = TrafficFollowerInfo.Speed;
 	DistanceAlongSpline = TrafficFollowerInfo.DistanceAlongSpline;
 }

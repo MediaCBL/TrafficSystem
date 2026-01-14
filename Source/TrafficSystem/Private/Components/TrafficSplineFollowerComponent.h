@@ -23,10 +23,6 @@ class TRAFFICSYSTEM_API UTrafficSplineFollowerComponent : public UActorComponent
 public:
 	UTrafficSplineFollowerComponent();
 
-	/** Assign the spline to follow */
-	UFUNCTION(BlueprintCallable, Category="Traffic|Spline")
-	void SetSpline(USplineComponent* InSpline);
-
 	/** Units per second */
 	UFUNCTION(BlueprintCallable, Category="Traffic|Spline")
 	void SetSpeed(float UnitsPerSecond);
@@ -58,7 +54,7 @@ public:
 	bool ShouldYieldTo(const AActor* Other) const;
 
 protected:
-	virtual void BeginPlay() override;
+
 	virtual void TickComponent(
 		float DeltaTime,
 		ELevelTick TickType,
