@@ -161,10 +161,13 @@ bool UTrafficSplineFollowerComponent::ShouldYieldTo(const AActor* Other) const
 
 	const AActor* Self = GetOwner();
 
+	if (!ITrafficVehicleInterface::Execute_GetIsBlockedByActor(Other, Self))
+		return true;
+
 	const int32 MyPriority = ITrafficVehicleInterface::Execute_GetTrafficPriority(Self);
 	const int32 OtherPriority = ITrafficVehicleInterface::Execute_GetTrafficPriority(Other);
 
-	// 1️⃣ Priority rule
+	// Priority rule
 	if (MyPriority != OtherPriority)
 		return MyPriority < OtherPriority;
 

@@ -23,6 +23,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Traffic")
 	bool IsBlocked() const { return BlockingActors.Num() > 0; }
 
+	UFUNCTION(BlueprintCallable, Category="Traffic")
+	bool IsBlockedByActor(const AActor* Actor) const;
+	
 	UPROPERTY(BlueprintAssignable, Category="Traffic")
 	FOnTrafficBlockStateChanged OnBlockStateChanged;
 

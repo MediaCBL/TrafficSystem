@@ -86,3 +86,8 @@ bool ATrafficActorBase::GetIsBlocked_Implementation() const
 {
 	return bIsBlockedByTraffic || bIsBlockedByLane;
 }
+
+bool ATrafficActorBase::GetIsBlockedByActor_Implementation(const AActor* Actor) const
+{
+	return TrafficFrontSensorComponent ? TrafficFrontSensorComponent->IsBlockedByActor(Actor) : false;
+}

@@ -18,6 +18,11 @@ UTrafficFrontSensorComponent::UTrafficFrontSensorComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 }
 
+bool UTrafficFrontSensorComponent::IsBlockedByActor(const AActor* Actor) const
+{
+	return BlockingActors.Contains(Actor);
+}
+
 void UTrafficFrontSensorComponent::BeginPlay()
 {
 	Super::BeginPlay();

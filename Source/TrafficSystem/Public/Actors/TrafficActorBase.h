@@ -47,6 +47,8 @@ public:
 	virtual bool GetIsBlockedByLane_Implementation() const override;
 	
 	virtual bool GetIsBlocked_Implementation() const override;
+	
+	virtual bool GetIsBlockedByActor_Implementation(const AActor* Actor) const override;
 
 protected:
 	UPROPERTY(BlueprintReadWrite, Category="Traffic")

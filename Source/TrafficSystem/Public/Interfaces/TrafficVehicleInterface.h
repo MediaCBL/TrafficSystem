@@ -28,6 +28,9 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent)
 	bool GetIsBlocked() const;
+	
+	UFUNCTION(BlueprintNativeEvent)
+	bool GetIsBlockedByActor(const AActor* Actor) const;
 
 	UFUNCTION(BlueprintNativeEvent, Category="Traffic")
 	void SetIsBlockedByTraffic(bool bIsBlocked);
