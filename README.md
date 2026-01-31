@@ -1,7 +1,9 @@
 # Traffic System Plugin
 
-## Overview
+**Spare-time, work-in-progress project exploring a simple traffic system. Intended as a reference and proof of concept rather than a production-ready solution.**
 
+## Overview
+WORK IN PROGRESS. 
 The **Traffic System Plugin** provides a modular and extensible framework for managing AI-driven traffic in Unreal Engine.  
 It is designed to simulate vehicle movement along splines, handle intersections, basic collision awareness, and traffic flow logic in a clean and reusable way.
 
