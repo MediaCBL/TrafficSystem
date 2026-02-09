@@ -39,6 +39,24 @@ Use this project mainly as a learning resource, reference, or starting point for
 
 ---
 
+## Chaos Modular Vehicle – Experimental Tests
+
+This repository includes a series of experimental tests performed with Unreal Engine’s Chaos Modular Vehicle (CMV) plugin.
+
+The goal of these tests was to explore:
+
+* Runtime assembly of GeometryCollection-based vehicle parts
+* Suspension constraint behavior and solver stability
+* Cluster Union mass and inertia redistribution
+* Breakable modular components (e.g., detachable bumper)
+* Staged damage system (Intact → Deformed → Critical → Detached)
+* Handling changes based on real mass/inertia shifts
+
+These experiments focus on understanding how CMV differs from the classic Chaos Vehicle system, particularly in terms of topology changes, constraint tuning, and destruction-driven gameplay.
+
+The code and setups are intended for research and learning purposes rather than production-ready vehicle implementations.
+
+
 ## Contributions
 
 Contributions, feedback, and ideas are welcome.  
