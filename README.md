@@ -43,6 +43,8 @@ These experiments focus on understanding how CMV differs from the classic Chaos 
 
 The code and setups are intended for research and learning purposes rather than production-ready vehicle implementations.
 
+<img src="Docs/ModularVehicle.gif" width="600"/>
+
 ---
 
 ## Disclaimer
