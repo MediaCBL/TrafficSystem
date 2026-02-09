@@ -26,19 +26,6 @@ This project is not intended to replace full-featured traffic or simulation fram
 
 ---
 
-## Disclaimer
-
-This repository is provided as-is.
-
-- Code quality may vary  
-- Some systems may be incomplete  
-- Limited documentation in early stages  
-- Not production-ready  
-
-Use this project mainly as a learning resource, reference, or starting point for your own implementations.
-
----
-
 ## Chaos Modular Vehicle – Experimental Tests
 
 This repository includes a series of experimental tests performed with Unreal Engine’s Chaos Modular Vehicle (CMV) plugin.
@@ -56,6 +43,20 @@ These experiments focus on understanding how CMV differs from the classic Chaos 
 
 The code and setups are intended for research and learning purposes rather than production-ready vehicle implementations.
 
+---
+
+## Disclaimer
+
+This repository is provided as-is.
+
+- Code quality may vary  
+- Some systems may be incomplete  
+- Limited documentation in early stages  
+- Not production-ready  
+
+Use this project mainly as a learning resource, reference, or starting point for your own implementations.
+
+---
 
 ## Contributions
 
