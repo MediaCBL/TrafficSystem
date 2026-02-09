@@ -43,6 +43,10 @@ These experiments focus on understanding how CMV differs from the classic Chaos 
 
 The code and setups are intended for research and learning purposes rather than production-ready vehicle implementations.
 
+**IMPORTANT**
+In your project settings, under Engine > Physics, click Enable Physics Prediction and Enable Physics History Capture. This gives superior networking 
+with server authoritative client prediction with rewind resimulation behavior. The vehicle will feel like it is locally controlled with no lag from the control inputs.
+
 <img src="Docs/ModularVehicle.gif" width="600"/>
 
 ---
