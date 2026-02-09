@@ -1,4 +1,48 @@
-# Traffic System Plugin
+# Traffic System Plugin (Experimental)
+
+Spare-time, work-in-progress project exploring a simple traffic system. Intended as a reference and proof of concept rather than a production-ready solution.
+
+---
+
+## Project Status
+
+This project is currently in active experimentation and prototyping.  
+Development is done during spare time and focuses on exploring technical concepts rather than delivering a finalized system.
+
+Features, architecture, and APIs may change frequently.
+
+---
+
+## Scope and Goals
+
+The main objectives of this repository are:
+
+- Prototype a lightweight traffic system  
+- Explore AI, pathing, and behavior logic  
+- Test performance and scalability concepts  
+- Validate design ideas for future projects or plugins  
+
+This project is not intended to replace full-featured traffic or simulation frameworks.
+
+---
+
+## Disclaimer
+
+This repository is provided as-is.
+
+- Code quality may vary  
+- Some systems may be incomplete  
+- Limited documentation in early stages  
+- Not production-ready  
+
+Use this project mainly as a learning resource, reference, or starting point for your own implementations.
+
+---
+
+## Contributions
+
+Contributions, feedback, and ideas are welcome.  
+However, this project prioritizes experimentation over long-term maintenance.
 
 ## Overview
 
@@ -39,7 +83,7 @@ These demo assets demonstrate:
 - Intersection and stop logic
 - Example Blueprint integration for designers
 
-> ⚠️ Demo content is provided for reference and testing only and can be safely removed in production builds.
+> Demo content is provided for reference and testing only and can be safely removed in production builds.
 
 ---
 
